@@ -1,6 +1,8 @@
-.mobileNavWrapper {
+$navbarHeight: 45px;
+
+.mobileNavbarWrapper {
     width: 100%;
-    height: 45px;
+    height: $navbarHeight;
     margin-left: auto;
     margin-right: auto;
     padding: 1px;
@@ -58,4 +60,12 @@
             cursor: pointer;
         }
     }
+}
+
+.mobileHiddenMenu {
+    width: 100%;
+    height: calc(100vh - $navbarHeight);
+    position: absolute;
+    left: -90px;
+    background-color: red;
 }

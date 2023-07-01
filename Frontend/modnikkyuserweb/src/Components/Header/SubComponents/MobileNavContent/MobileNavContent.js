@@ -14,29 +14,34 @@ function MobileNavContent() {
     }, [isMobileMenuActive])
 
     return (
-        <section className={styles.mobileNavWrapper}>
-            <div className={styles.menuIconWrapper}>
-                <div className={styles.menuIconArea} onClick={() => setIsMobileMenuActive(prev => !prev)}>
-                    <HiOutlineMenuAlt2 />
+        <>
+            <section className={styles.mobileNavbarWrapper}>
+                <div className={styles.menuIconWrapper}>
+                    <div className={styles.menuIconArea} onClick={() => setIsMobileMenuActive(prev => !prev)}>
+                        <HiOutlineMenuAlt2 />
+                    </div>
                 </div>
-            </div>
-            <div className={styles.brandWrapper}>
-                <span style={{ fontFamily: '"LexendPeta"' }} className={styles.brandText}>
-                    Modnikky
-                </span>
-            </div>
-            <div className={styles.iconsWrapper}>
-                <div className={styles.searchIcon}>
-                    <FaSearch />
+                <div className={styles.brandWrapper}>
+                    <span style={{ fontFamily: '"LexendPeta"' }} className={styles.brandText}>
+                        Modnikky
+                    </span>
                 </div>
-                <div className={styles.bagIcon}>
-                    <PiHandbagSimpleBold />
+                <div className={styles.iconsWrapper}>
+                    <div className={styles.searchIcon}>
+                        <FaSearch />
+                    </div>
+                    <div className={styles.bagIcon}>
+                        <PiHandbagSimpleBold />
+                    </div>
+                    <div className={styles.accountIcon}>
+                        <MdOutlineAccountCircle />
+                    </div>
                 </div>
-                <div className={styles.accountIcon}>
-                    <MdOutlineAccountCircle />
-                </div>
-            </div>
-        </section>
+            </section>
+            <section className={styles.mobileHiddenMenu}>
+
+            </section>
+        </>
     )
 }
 
