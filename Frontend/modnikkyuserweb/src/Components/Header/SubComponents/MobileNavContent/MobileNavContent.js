@@ -4,12 +4,15 @@ import { HiOutlineMenuAlt2 } from 'react-icons/hi'
 import { FaSearch } from 'react-icons/fa'
 import { PiHandbagSimpleBold } from 'react-icons/pi'
 import { MdOutlineAccountCircle } from 'react-icons/md'
+import { MobileNavigationItems } from '../../../../Models/MobileNavigationItems/MobileNavigationItems'
+import NavLinkItem from './subComponents/NavLinkItem/NavLinkItem'
 
 function MobileNavContent() {
 
-    const [isMobileMenuActive, setIsMobileMenuActive] = useState(false)
+    const [isMobileMenuActive, setIsMobileMenuActive] = useState(true)
 
     useEffect(() => {
+        // TODO: zrobić blokowanie scrolla
         console.log(isMobileMenuActive)
     }, [isMobileMenuActive])
 
@@ -22,6 +25,7 @@ function MobileNavContent() {
                     </div>
                 </div>
                 <div className={styles.brandWrapper}>
+                    {/* TODO: Czcionka nie ładuje sie */}
                     <span style={{ fontFamily: '"LexendPeta"' }} className={styles.brandText}>
                         Modnikky
                     </span>
@@ -38,8 +42,12 @@ function MobileNavContent() {
                     </div>
                 </div>
             </section>
-            <section className={styles.mobileHiddenMenu}>
-
+            <section className={isMobileMenuActive ? `${styles.mobileHiddenMenu} ${styles.mobileHiddenMenuActive}` : `${styles.mobileHiddenMenu}`}>
+                <div className={styles.hiddenMenuContentWrapper}>
+                    <div className={styles.hiddenMenuContent}>
+                        <NavLinkItem itemsCollection={MobileNavigationItems} />
+                    </div>
+                </div>
             </section>
         </>
     )

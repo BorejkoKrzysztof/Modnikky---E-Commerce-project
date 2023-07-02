@@ -63,9 +63,34 @@ $navbarHeight: 45px;
 }
 
 .mobileHiddenMenu {
+    transform: translateY(-$navbarHeight);
     width: 100%;
-    height: calc(100vh - $navbarHeight);
+    height: 100vh;
     position: absolute;
-    left: -90px;
-    background-color: red;
+    left: -110%;
+    background-color: white;
+    z-index: -1;
+    transition: left .7s ease-out;
+
+    .hiddenMenuContentWrapper {
+        width: 100%;
+        height: calc(100vh - $navbarHeight);
+        transform: translateY($navbarHeight);
+        padding-top: 1px;
+        background-color: rgb(120, 120, 218);
+
+        .hiddenMenuContent {
+            width: 95%;
+            height: 95%;
+            margin-top: 15px;
+            margin-left: auto;
+            margin-right: auto;
+
+            background-color: red;
+        }
+    }
+}
+
+.mobileHiddenMenuActive {
+    left: 0;
 }
